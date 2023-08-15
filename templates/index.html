@@ -3,11 +3,24 @@
   <head>
   </head>
   <body>
+    <!-- <button id="btnPlay">재생</button> -->
     {% if True %}    
     <img src="{{ url_for('static', filename=image_file) }}" width="300">
-    <audio controls>
-        <source src="data:audio/mpeg;base64,{{ audiodata }}">
-    </audio>
+    <audio src="data:audio/mpeg;base64,{{ audiodata }}" controls id="HelloAudio">
     {% endif %}
   </body>  
+    
+  <script>
+    // 자동재생이 안됨.....
+    const myAudio  = document.getElementById("HelloAudio");
+    myAudio.canplaythrough = function(){
+	    myAudio.play(); 
+    }
+    
+    // 버튼으로 재생
+    const btnPlay = document.getElementById("btnPlay");
+    btnPlay.onclick = function () {
+        myAudio.play();
+    }
+  </script>
 </html>
