@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    {% if True %}
+    <img src="{{ url_for('static', filename=image_file) }}" width="250">
+    {% endif %}
+    <audio src="https://ccrma.stanford.edu/~jos/mp3/harpsi-cs.mp3" controls></audio>
+  </body>
+</html>
