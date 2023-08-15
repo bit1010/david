@@ -3,6 +3,7 @@
 import os
 from io import BytesIO
 import base64
+import socket
 from flask import Flask, render_template
 from flask import Flask, request, Response
 from gtts import gTTS
@@ -24,7 +25,7 @@ def home():
     encoded_audio_data = base64.b64encode(fp.getvalue())
 
     # return Response(fp.getvalue(), mimetype='audio/mpeg') # 페이지 전달없이 바로 재생
-    return render_template('index.html', image_file="david.jpg", audiodata=encoded_audio_data.decode('utf-8'))
+    return render_template('index.html', image_file="david.jpg", audiodata=encoded_audio_data.decode('utf-8'), computername=socket.gethostname())
 
 
 if __name__ == '__main__':
