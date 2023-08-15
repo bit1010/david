@@ -3,9 +3,11 @@
   <head>
   </head>
   <body>
-    {% if True %}
-    <img src="{{ url_for('static', filename=image_file) }}" width="250">
+    {% if True %}    
+    <img src="{{ url_for('static', filename=image_file) }}" width="300">
+    <audio controls>
+        <source src="data:audio/mpeg;base64,{{ audiodata }}">
+    </audio>
     {% endif %}
-    <audio src="https://ccrma.stanford.edu/~jos/mp3/harpsi-cs.mp3" controls></audio>
-  </body>
+  </body>  
 </html>
