@@ -3,6 +3,7 @@ pipeline {
 	stages {
 		stage("init") {
 			steps {
+				sh 'init'
 			}
 		}
 		stage("Checkout") {
@@ -17,6 +18,7 @@ pipeline {
 		}
 		stage("test") {			
 			steps {
+				sh 'test'
 			}
 		}
 		stage("Tag and Push") {
