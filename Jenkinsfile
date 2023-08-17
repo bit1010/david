@@ -9,7 +9,7 @@ pipeline {
 		stage("build") {
 			steps {
 				echo BUILD_NUMBER
-				docker build -t david:v1.0 .
+				"docker build -t david:v1.0 ."
 			}
 		}
 		stage("test") {
