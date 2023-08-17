@@ -8,7 +8,8 @@ pipeline {
 		}
 		stage("build") {
 			steps {
-				echo 'building the applicaiton...'
+				echo BUILD_NUMBER
+				sh 'docker build -t david:v1.0 .'
 			}
 		}
 		stage("test") {
