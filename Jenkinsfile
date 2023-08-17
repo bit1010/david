@@ -13,22 +13,18 @@ pipeline {
 		}
 		stage("Build") {
 			steps {
-				sh 'docker-compose build web'
 			}
 		}
 		stage("test") {			
 			steps {
-				sh 'test'
 			}
 		}
 		stage("Tag and Push") {
 			steps {				
-				sh 'docker Tag and Push'
 			}
 		}
 		stage("deploy") {
 			steps {
-				sh 'docker-compose up -d'
 			}
 		}
 	}
