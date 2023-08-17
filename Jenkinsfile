@@ -1,30 +1,19 @@
 pipeline {
 	agent any
 	stages {
-		stage("init") {
+		stage("build") {
 			steps {
-				sh 'init'
+				echo 'building the applicaiton...'
 			}
 		}
-		stage("Checkout") {
+		stage("test") {
 			steps {
-				checkout scm
-			}
-		}
-		stage("Build") {
-			steps {
-			}
-		}
-		stage("test") {			
-			steps {
-			}
-		}
-		stage("Tag and Push") {
-			steps {				
+				echo 'testing the applicaiton...'
 			}
 		}
 		stage("deploy") {
 			steps {
+				echo 'deploying the applicaiton...'
 			}
 		}
 	}
