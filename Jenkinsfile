@@ -9,7 +9,7 @@ pipeline {
 		stage("build") {
 			steps {
 				echo BUILD_NUMBER
-				sh 'dir'
+				sh 'docker'
 			}
 		}
 		stage("test") {
