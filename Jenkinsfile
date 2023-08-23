@@ -11,10 +11,5 @@ pipeline {
 				echo BUILD_NUMBER
 			}
 		}
-		stage("deploy") {
-			steps {
-				echo 'deploying the applicaiton...'
-			}
-		}
 	}
 }
