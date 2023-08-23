@@ -7,8 +7,8 @@ pipeline {
 			}
 		}
 		stage("build") {
-			steps {
-				echo BUILD_NUMBER
+			steps {	
+				sh 'docker build -t david:${BUILD_NUMBER} .'
 			}
 		}
 	}
