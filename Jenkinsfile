@@ -9,7 +9,6 @@ pipeline {
 		stage("build") {
 			steps {
 				echo BUILD_NUMBER
-				sh "ls"
 			}
 		}
 		stage("deploy") {
