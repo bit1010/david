@@ -27,5 +27,16 @@ pipeline {
 				sh 'docker rmi david:${BUILD_NUMBER}'
 			}
 		}
+	}	
+	post {
+		always {
+			echo 'building..'
+		}
+		success {
+	    		echo 'success'
+		}
+		failure {
+	    		echo 'failure'
+		}
 	}
 }
