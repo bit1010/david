@@ -22,6 +22,9 @@ pipeline {
 				sh 'docker push bit1010/david:latest'
 
 				sh 'kubectl apply -f service.yaml'
+				
+				sh 'docker rmi bit1010/david:${BUILD_NUMBER}'
+				sh 'docker rmi david:${BUILD_NUMBER}'
 			}
 		}
 	}
