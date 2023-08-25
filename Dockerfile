@@ -1,6 +1,8 @@
 FROM python:3
 
+WORKDIR /app
+
 COPY . .
 RUN pip3 install -r requirements.txt
 
-CMD ["gunicorn", "-b=:80", "--access-logfile=-", "main:app"]
+CMD gunicorn 'main:app' --bind=0.0.0.0:80
