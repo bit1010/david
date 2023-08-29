@@ -15,5 +15,19 @@ pipeline {
 				sh 'docker push bit1010/david:latest'		
 			}
 		}
+	}	
+	post {
+		always {
+			echo 'building..'
+		}
+		success {
+	    		echo 'success'
+			
+			sh 'docker rmi bit1010/david:latest'
+			sh 'docker rmi david:latest'
+		}
+		failure {
+	    		echo 'failure'
+		}
 	}
 }
