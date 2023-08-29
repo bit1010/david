@@ -8,7 +8,7 @@ pipeline {
 		}			
 		stage("deploy") {
 			steps {	
-				sh 'docker tag david:${BUILD_NUMBER} bit1010/david:latest'
+				sh 'docker tag david:$latest bit1010/david:latest'
 				
 				sh 'docker login -u bit1010 -p dckr_pat__Ljf_O9QXl2-tLwadueYD98IoFQ'
 
