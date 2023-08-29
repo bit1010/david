@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage("build") {
 			steps {	
-				sh 'docker build -t david:${BUILD_NUMBER} .'
+				sh 'docker build -t david:latest .'
 			}
 		}	
 	}	
@@ -14,7 +14,7 @@ pipeline {
 		success {
 	    		echo 'success'
 			
-			sh 'docker rmi david:${BUILD_NUMBER}'
+			sh 'docker rmi david:latest'
 		}
 		failure {
 	    		echo 'failure'
