@@ -14,7 +14,7 @@ pipeline {
 
 				sh 'docker push bit1010/david:latest'		
 							
-			    withKubeConfig([credentialsId: 'kubectl-deploy-credentials', serverUrl: 'https://192.168.49.2']) {
+			    withKubeConfig([credentialsId: 'kubectl-deploy-credentials', serverUrl: 'https://192.168.49.2:8443']) {
 				sh 'kubectl apply -f service.yaml'
 			    }
 			}
