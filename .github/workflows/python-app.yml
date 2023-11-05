@@ -23,5 +23,5 @@ jobs:
         image: bit1010/davidtest
         tags: v3, latest
         registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        username: bit1010
+        password: %Victory2300
